@@ -1,4 +1,0 @@
-pcilib: Cannot find any working access method.
-pcilib: pci_init failed
-Error opening specified endpoint "udp:161"
-Server Exiting with code 1
