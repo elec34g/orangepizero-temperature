@@ -1,6 +1,6 @@
 #!/bin/bash
 #echo  'Temp 23.64 C;Humidity 40.26%'
-"/opt/orangepizero-temperature/htu21-sensor/build/htu21-orangepi-test.elf"
+"/opt/orangepizero-temperature/htu21-sensor/build/htu21-orangepi-test.elf t"
 
 #Find the script base path (used to find mapping file)
 #SCRIPT_PATH="`dirname \"$0\"`"              # relative
