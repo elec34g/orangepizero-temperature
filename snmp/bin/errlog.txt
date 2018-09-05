@@ -1,5 +1,0 @@
-pcilib: Cannot find any working access method.
-pcilib: pci_init failed
-NET-SNMP version 5.7.3
-Connection from UDP: [10.1.1.20]:57206->[10.1.2.51]:161
-Connection from UDP: [10.1.1.20]:57209->[10.1.2.51]:161
