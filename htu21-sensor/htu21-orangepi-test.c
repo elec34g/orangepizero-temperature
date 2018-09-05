@@ -35,7 +35,7 @@
 
 #define PATH_STR                   "/dev/i2c-0"
 
-int main()
+int main(int argc, char** argv)
 {
 	//printf("Starting test...\n");
 	int file = open(PATH_STR, O_RDWR);
@@ -87,7 +87,9 @@ int main()
 //	printf("Get data 0x%2X 0x%2X 0x%2X\n", data_ar[0], data_ar[1], data_ar[2]);
     const double hum = htu21_get_hum( data_ar[0], data_ar[1]);
     const double hum_compensated = htu21_hum_compensated(temp, hum);
-	printf("Temp %.2F C;Humidity %.2F%%\n", temp,hum_compensated);
+	if(argv[0].compare("t")==0) printf("%.2F", temp);
+	elase if(argv[0].compare("h")==0) printf("%.2F%%\n",hum_compensated);
+	else printf("Temp %.2F C;Humidity %.2F%%\n", temp,hum_compensated);
 	close(file);
 	return 0;
 }
