@@ -59,7 +59,7 @@ int main(int argc, char * argv[])
 	};
 	if (read(file,&data,sizeof(data)) < (int)sizeof(data)) {
 		printf("Error reading data : %s\n", strerror(errno));
-                exit(1);	
+                exit(1);
 	};
 //	printf("Get status 0x%02X\n", data);
 	command = HTU21_TRIGGER_TEMP_HOLD;
@@ -88,9 +88,10 @@ int main(int argc, char * argv[])
     const double hum = htu21_get_hum( data_ar[0], data_ar[1]);
     const double hum_compensated = htu21_hum_compensated(temp, hum);
 
-	if(strcmp(argv[1], "t")==0) printf("%.2F\n", temp);
+	if (argc <= 1) printf("Temp %.2F C Humidity %.2F \n ", temp,hum_compensated );
+	else if(strcmp(argv[1], "t")==0) printf("%.2F\n", temp);
 	else if(strcmp(argv[1],"h")==0) printf("%.2F\n",hum_compensated);
-	else printf("Temp %.2F C;Humidity %.2F%%\n %s %s ", temp,hum_compensated ,argv[0],argv[1]);
+	else printf("Temp %.2F C Humidity %.2F \n ", temp,hum_compensated );
 	close(file);
 	return 0;
 }
